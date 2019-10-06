@@ -1,0 +1,35 @@
+table {
+	border-collapse: collapse;
+	border: 3px solid grey; 
+	width: 100%;
+}
+	th, td {
+		border: 1px solid grey;
+		padding: 10px 15px;
+	}
+	.linkTh{
+		cursor: pointer;
+		transition: 0.2s ease all;
+	}
+	.linkTh:hover{
+		background-color: rgba(0,0,0,0.1);
+	}
+		.deletePost{
+			font-family: sans-serif;
+			cursor: pointer;
+			color: green;
+			font-size: 16px;
+		}
+		.deletePost:hover{
+			color: blue;
+		}
+		.updatePostBtn{
+			font-family: sans-serif;
+			line-height: 18px;
+			font-size: 18px;
+			cursor: pointer;
+			color:blue;
+		}
+		.updatePostBtn:hover{
+			color:green;
+		}

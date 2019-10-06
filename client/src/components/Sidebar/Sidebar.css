@@ -1,0 +1,7 @@
+a{
+	text-decoration: none;
+	display: block;
+}
+.activeLink{
+	color: green;
+}

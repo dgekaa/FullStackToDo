@@ -1,0 +1,24 @@
+.wrapper{
+	display: grid;
+	grid-template-columns: minmax(150px, 1fr) 6fr;
+	grid-template-rows: 50px 1fr;
+	grid-template-areas: 
+		"header header"
+		"sidebar content";
+		grid-gap: 5px;
+}
+	.sidebar, .header, .content {
+		background-color: #999;
+		padding: 10px;
+	}
+	.sidebar{
+		grid-area: sidebar;
+	}
+	.content{
+		grid-area: content;
+		background-color: #fff;
+	}
+	.header{
+		grid-area: header;
+		text-align: center;
+	}
