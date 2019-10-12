@@ -1,0 +1,28 @@
+.formControl {
+	position: relative;
+}
+	.formControl input{
+		width: calc(100% - 6px);
+		height: 25px;
+		border: none;
+		outline: none;
+		padding: 0 3px;
+		box-shadow: 0 0 1px 1px #3d3d3d;
+	}
+	.formControl.error input {
+		box-shadow: 0 0 1px 2px red;
+	}
+	.errText{
+		display: inline-block;
+		z-index: 1;
+		background: #3d3d3d;
+		color: #fff;
+		padding: 3px;
+		border-radius: 5px 5px 0 0;
+		position: absolute;
+		top: -25px;
+		left: -2px;
+	}
+	.calendar{
+		position: absolute;
+	}

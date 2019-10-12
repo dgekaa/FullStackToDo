@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose";
 const ToDoSchema = new Schema({
 	title: String,
 	description: String,
-	dateTo: Date
+	dateTo: String
 },{ 
 	timestamps: true
 });

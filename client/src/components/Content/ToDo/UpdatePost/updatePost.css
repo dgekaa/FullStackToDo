@@ -6,12 +6,6 @@
 	display: inline-block;
 	border-radius: 3px;
 }
-	.updatePost input {
-		width:95%;
-		padding: 0 5px;
-		margin: 5px 0;
-		height: 25px;
-	}
 	.updatePost button, .cancelBtn {
 		cursor: pointer;
 		width:50%;

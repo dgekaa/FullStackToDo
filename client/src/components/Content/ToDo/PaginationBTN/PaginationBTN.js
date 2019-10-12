@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { orderBy } from "../../../../_actions/toDo.js";
+import { orderBy } from "../../../../store/_actions/toDo.js";
 
 import "./PaginationBTN.css";
 

@@ -6,12 +6,6 @@
 	display: inline-block;
 	border-radius: 3px;
 }
-	.add-new input {
-		width:95%;
-		padding: 0 5px;
-		margin: 5px 0;
-		height: 25px;
-	}
 	.add-new button {
 		cursor: pointer;
 		width:100%;

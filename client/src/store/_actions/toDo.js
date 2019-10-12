@@ -1,6 +1,13 @@
+export const TO_DO_FETCH_DATA_SUCCESS = "TO_DO_FETCH_DATA_SUCCESS";
+export const ADD_NEW_TO_DO = "ADD_NEW_TO_DO";
+export const DELETE_ONE_TO_DO = "DELETE_ONE_TO_DO";
+export const CAN_UPDATE_POST = "CAN_UPDATE_POST";
+export const UPDATE_POST = "UPDATE_POST";
+export const ORDER_BY = "ORDER_BY";
+
 export const toDoFetchDataSuccess = data => {
 	return {
-		type: "TO_DO_FETCH_DATA_SUCCESS",
+		type: TO_DO_FETCH_DATA_SUCCESS,
 		payload : data
 	}
 };
@@ -17,7 +24,7 @@ export const toDoFetchData = url => {
 
 export const addNewToDoSuccess  = data => {
 	return {
-		type: "ADD_NEW_TO_DO",
+		type: ADD_NEW_TO_DO,
 		payload : data
 	}
 }
@@ -33,6 +40,7 @@ export const addNewToDo = (url, data) => {
 		})
 			.then( res => res.json())
 			.then( data => {
+					    debugger
 				dispatch(addNewToDoSuccess(data))
 			})
 			.catch( err => new Error(err));
@@ -41,7 +49,7 @@ export const addNewToDo = (url, data) => {
 
 export const deleteOneToDoSuccess = data => {
 	return {
-		type: "DELETE_ONE_TO_DO",
+		type: DELETE_ONE_TO_DO,
 		payload: data
 	}
 };
@@ -60,7 +68,7 @@ export const deleteOneToDo = (url, id) => {
 
 export const canUpdatePost = (bool, post) => {
 	return {
-		type: "CAN_UPDATE_POST",
+		type: CAN_UPDATE_POST,
 		payload: {
 			bool,
 			post
@@ -70,7 +78,7 @@ export const canUpdatePost = (bool, post) => {
 
 export const updatePostSuccess = (id, data) => {
 	return {
-		type: "UPDATE_POST",
+		type: UPDATE_POST,
 		payload: {
 			id,
 			data
@@ -97,7 +105,7 @@ export const updatePost = (url, id, data) => {
 
 export const orderBy = (data, name, how) => {
 	return {
-		type: "ORDER_BY",
+		type: ORDER_BY,
 		payload: {
 			data, 
 			name, 

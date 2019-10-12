@@ -3,34 +3,31 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { reduxForm, Field } from "redux-form";
 
-import { addNewToDo } from "../../../../_actions/toDo.js";
+import { addNewToDo } from "../../../../store/_actions/toDo.js";
+
+import { requiredField, maxLengthCreator } from "../../../_Validators/validation.js";
+
+import { InputText, InputDate } from "../../../_Forms/Forms.js"
 
 import "./addNew.css";
 
-const FormAddNew = props => {
-	return(
+const maxLength15 = maxLengthCreator(15);
+
+const FormAddNew = props => 
 		<form onSubmit={props.handleSubmit}>
-          	<Field 
-          		name="title"
-          		component="input"
-          		placeholder="Title"
-          		required
+          	<Field placeholder="Title" name="title"
+          		component={InputText}
+          		validate={[requiredField, maxLength15]}
           	/><br/>
-          	<Field 
-          		name="description"
-          		component="input"
-          		placeholder="Description"
-          		required
+          	<Field placeholder="Description" name="description"
+          		component={InputText}
+          		validate={[requiredField, maxLength15]}
           	/><br/>
-          	<Field 
-          		name="dateTo"
-          		component="input"
-          		type="date" 
+          	<Field name="dateTo"
+          		component={InputDate}
           	/><br/>
           	<button>Add new</button>
       </form>
-	)
-}
 
 const FormAddNewRedux = reduxForm({
 	form: "FormAddNew"

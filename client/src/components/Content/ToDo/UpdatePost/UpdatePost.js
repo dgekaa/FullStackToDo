@@ -6,7 +6,13 @@ import { reduxForm, Field } from "redux-form";
 
 import "./updatePost.css";
 
-import { updatePost, canUpdatePost } from "../../../../_actions/toDo.js";
+import { updatePost, canUpdatePost } from "../../../../store/_actions/toDo.js";
+
+import { InputText, InputDate } from "../../../_Forms/Forms.js"
+
+import { maxLengthCreator } from "../../../_Validators/validation.js";
+
+const maxLength15 = maxLengthCreator(15);
 
 const FormUpdatePost = props => {
 	const dispatch = useDispatch();
@@ -14,24 +20,19 @@ const FormUpdatePost = props => {
 
 	return(
 		<form onSubmit={props.handleSubmit}>
-			<Field 
+			<Field placeholder={toDo.title}
 				name="title"
-          		component="input"
-				placeholder={toDo.title}
-				required
+          		component={InputText}
+          		validate={[maxLength15]}
 			/><br/>
-			<Field 
+			<Field placeholder={toDo.title}
 				name="description"
-          		component="input"
-				type="text" 
-				placeholder={toDo.title}
-				required
+          		component={InputText}
+          		validate={[maxLength15]}
 			/><br/>
-			<Field 
-				name="dateTo"
-          		component="input"
-				type="date" 
-				/><br/>
+			<Field name="dateTo"
+          		component={InputDate}
+          	/><br/>
 			<button>Update</button>
 			<div 
 				className="cancelBtn"

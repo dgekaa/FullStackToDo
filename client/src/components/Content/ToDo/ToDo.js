@@ -13,7 +13,7 @@ import {
 	deleteOneToDo, 
 	canUpdatePost,
 	orderBy,
-} from "../../../_actions/toDo.js";
+} from "../../../store/_actions/toDo.js";
 
 const ToDo = () => {
 
@@ -23,7 +23,7 @@ const ToDo = () => {
 		page 			= useSelector( state => state.toDo.page ),
 		pages 			= useSelector( state => state.toDo.pages ),
 		isUpdatePost 	= useSelector( state => state.toDo.canUpdatePost ),
-		howOrderBy 	= useSelector( state => state.toDo.howOrderBy );
+		howOrderBy 		= useSelector( state => state.toDo.howOrderBy );
 
 	console.log(useSelector( state => state) , "STORE ALL")
 	
@@ -48,11 +48,11 @@ const ToDo = () => {
         		!data
 	        		? 	"Даных пока нет"
 	    			:	<Fragment>
-		    				<PaginationBTN
+		    				{ pages >= 2 && <PaginationBTN
 		    					page={page}
 					        	pages={pages}
 					        	fetchData={toDoFetchData}
-					        /> 
+					        /> }
 							<table>
 								<thead>
 									<tr>
