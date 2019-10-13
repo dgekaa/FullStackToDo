@@ -40,7 +40,6 @@ export const addNewToDo = (url, data) => {
 		})
 			.then( res => res.json())
 			.then( data => {
-					    debugger
 				dispatch(addNewToDoSuccess(data))
 			})
 			.catch( err => new Error(err));

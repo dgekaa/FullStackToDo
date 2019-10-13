@@ -3,8 +3,10 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 
 import ToDoController from "./controllers/ToDoController";
+import authController from "./controllers/authController";
 
 const ToDo = new ToDoController();
+const auth = new authController();
 
 const app = express();
 mongoose.connect(
@@ -33,14 +35,12 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.post("/register", auth.postRegistrForm)
+
 app.get("/to_do/:page", ToDo.getAllToDO);
-
 // app.get("/to_do/:id" , ToDo.getOneToDo);
-
 app.post("/to_do", ToDo.postOneToDO);
-
 app.delete("/to_do/:id", ToDo.deleteOneToDO);
-
 app.put("/to_do/:id", ToDo.putOneToDo);
 
 
